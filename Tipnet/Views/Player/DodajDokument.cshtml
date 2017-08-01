@@ -1,0 +1,148 @@
+﻿@using Tipnet.DTOs
+
+@{
+    ViewBag.Title = "DodajDokument";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string klasa = "label-success";
+    string btnKlasa = "btn-info";
+    var slike = (List<ImageDTO>)ViewBag.Slike;
+}
+
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+
+@if (ViewBag.BrSlika == Convert.ToInt32(ViewBag.MaxBrSlika))
+{
+    klasa = "label-danger";
+    btnKlasa = "btn-danger dissabled";
+}
+
+<h2>Dodaj Dokument</h2>
+
+@using (Html.BeginForm("DodajDokument", "Player", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-control">
+            <p>Broj uploadanih dokumenata: <strong class="label @klasa">@ViewBag.BrSlika</strong>. Max broj je <strong class="label label-info">@ViewBag.MaxBrSlika</strong>.</p>
+        </div>
+        <br />
+        <table class="table table-condensed">
+            <tr style="background: #c22326; color: white;">
+                <th class="list-group-item-heading">Naziv dokumenta</th>
+                <th class="list-group-item-heading">Datum slanja</th>
+                <th class="list-group-item-heading">Status dokumenta</th>
+                <th class="list-group-item-heading">Prikaz dokumenta</th>
+            </tr>
+            
+            @foreach (var item in slike)
+            {
+                <tr>
+                    <td >@item.Ime</td>
+                    <td >@item.UploadTimeStamp</td>
+                    @if (item.Status)
+                    {
+                        <td>Pregledan</td>
+                    }
+                    else
+                    {
+                        <td>Nije pregledan</td>
+                    }
+
+                    <td><span class="glyphicon glyphicon-search" onclick="showImage('@item.Ime')" aria-hidden="true" style="display: block; margin-right: auto;margin-left: auto; width: 50%"></span></td>
+                </tr>
+
+            }
+        </table>
+
+        <label for="file">Upload Image:</label>
+        <input key="file" type="file" name="file" class="inputfile" id="file" onchange="readURL(this);" style="width: auto;" />
+
+
+        @Html.ValidationMessage("file", "", new { @class = "validMsg text-danger" })
+        <br />
+        <div class="help-block">
+            <img id="imgPrew" />
+            <p id="imgName"></p>
+            <p id="imgSize"></p>
+        </div>
+        
+        <img id="popupImg" alt=""/>
+        
+        <span>
+            <input type="submit" value="Upload" class="btn @btnKlasa" />
+            <button class="btn btn-danger" id="imgDel" style="display: none;">Delete</button>
+        </span>
+    </div>
+
+}
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+
+        $("#file").bind("change", function() {
+            $("#imgSize").text(((this.files[0].size) / 1024).toFixed(2) + " KB");
+            $(".validMsg").remove();
+        });
+
+        $("#file").bind("change", function () {
+            $("#imgName").text(this.files[0].name);
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+
+                    var imgPrew = $("#imgPrew");
+                    imgPrew.height("120px").width("150px").attr('src', e.target.result).show();;
+                    $("#imgDel").show();
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#imgDel").on('click', function (e) {
+            var $el = $('#file');
+            $el.wrap('<form>').closest('form').get(0).reset();
+            $el.unwrap();
+
+            $("#imgSize").text("");
+            $("#imgName").text("");
+            $("#imgPrew").hide();
+            $("#imgDel").hide();
+
+            e.stopPropagation();
+            e.preventDefault();
+        });
+
+
+
+        function showImage(input) {
+            var link = '@Url.Action("GetImage", "Player", new {name= -1})';
+            link = link.replace("-1", input);
+            
+            $("#popupImg").attr("src", link).width("88%").height("88%");
+
+            $("#popupImg").dialog({
+                modal: true,
+                resizable: false,
+                draggable: false,
+                title: input,
+                width: 'auto',
+            
+                maxWidth: 1600,
+                maxHeight: 500
+        });            
+        }
+        
+    </script>
+
+}
+

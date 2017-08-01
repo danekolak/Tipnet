@@ -1,0 +1,296 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-image: url(https://app1.4tipnet.com/redesign/images/bg-opt.png);
+    background-repeat: no-repeat;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* MOJ CSS */
+
+.ui-dialog{
+    position:fixed;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+     transform: translate(-50%,-50%);
+    }
+
+#password-strength {
+    color: #f5f5f5;
+}
+
+#mCont {
+    width: 1170px;
+    background-color: #ffffff;
+    border-left: #000000 solid 1px;
+    border-right: #000000 solid 1px;
+    margin-left: -15px;
+    margin-top: -20px;
+}
+
+#innerMenu {
+    float: left;
+    width: 1250px;
+    margin-left: -170px;
+}
+
+#partial-login {
+    padding-top: 30px;
+}
+
+#logo {
+    height: 97px;
+    width: 150px;
+}
+
+.mcont {
+    background: white;
+    border-left: 1px solid #dbdde0;
+    border-right: 1px solid #dbdde0;
+}
+
+#heading {
+    margin-left: 1em;
+}
+
+#login-state-cont {
+    margin-top: 1em;
+}
+
+.header-1 {
+    background: #e7e7e7;
+    height: 30px;
+    z-index: 1031;
+}
+
+.header-2 {
+    background: url(/Content/images/header_bg.png) center;
+    height: 135px;
+}
+
+#vanjska-lista {
+    float: right;
+    list-style-type: none;
+}
+
+#recovery {
+    float: right;
+    margin-top: 35px;
+}
+
+    #recovery a {
+        color: #4d4d4d;
+        font-size: 11px;
+        height: 28px;
+        line-height: 28px;
+        margin-left: 20px;
+        text-decoration: none;
+    }
+
+/*#pageWrap, .shadow-bg {
+    background: url(/Content/Images/border.png) center repeat-y;
+}*/
+
+ul#menu {
+    display: table;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 38px;
+    vertical-align: middle;
+}
+
+    ul#menu li {
+        display: table-cell;
+        height: 38px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+.dvdr {
+    background: url(/Content/images/m-bg-selected.jpg);
+    float: left;
+    height: 38px;
+    width: 2px;
+}
+
+ul#menu li a {
+    color: #b8b8b8;
+    display: table-cell;
+    height: 38px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 0 3px #000;
+    text-shadow: 2px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 125px;
+}
+
+.meni {
+    background: url(/content/Images/m-bg.jpg);
+    height: 38px;
+    font-family: 'Open Sans',sans-serif;
+    color: #FFF;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+ul#menu li a:hover, ul#menu li a:active, .menu-selected {
+    background: url(/Content/images/m-bg-hover.jpg);
+    color: #FFF !important;
+    height: 38px;
+    margin-left: -1px;
+}
+
+.col-xs-2 {
+    width: 16.66666667%;
+}
+
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+    float: left;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.btn-a {
+    background: none repeat scroll 0 0 #464646;
+    border: 0 none;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    float: right;
+    height: 28px;
+    margin-right: 10px;
+    width: 100px;
+}
+
+
+.btn-alt {
+    background: none repeat scroll 0 0 #c22326;
+    border: 0 none;
+    color: #fff;
+    float: left;
+    font-size: 12px;
+    height: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 170px;
+    float: right;
+}
+
+    .btn-alt a {
+        color: #fff !important;
+        display: block;
+        height: 28px;
+        padding: 5px;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 100%;
+    }
+
+.loginInput {
+    border: 1px solid #d9d9d9;
+    float: left;
+    font-size: 12px;
+    height: 28px;
+    margin-right: 10px;
+    padding-left: 5px;
+    width: 127px;
+}
+
+#langMenu {
+    position: relative;
+    display: inline-block;
+    width: 160px;
+    text-align: center;
+}
+
+    #langMenu ul {
+        list-style: none;
+    }
+
+    #langMenu:hover #sub-menu {
+        visibility: visible; /* shows sub-menu */
+        opacity: 1;
+        z-index: 1;
+        transform: translateY(0%);
+        transition-delay: 0s, 0s, 0.3s;
+    }
+
+#sub-menu {
+    background: #DDD;
+    text-align: center;
+    visibility: hidden; /* hides sub-menu */
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-2em);
+    z-index: -1;
+    transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+.lang-option {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dissabled {
+    cursor: no-drop;
+    pointer-events: none;
+}
+
+/* BOOTSTRAP OVERRIDES */
+.navbar-inverse {
+    background-image: url(https://app1.4tipnet.com/redesign/images/header_bg.png);
+    border-color: white;
+    background-color: white;
+}
+
+.form-horizontal {
+    background: none repeat scroll 0 0 #f5f5f5;
+    border: 1px solid #c6c6c6;
+    clear: both;
+    padding: 20px 20px;
+    margin-left: 4em;
+    margin-top: 1em;
+    width: 74em;
+}
+
+.body-content {
+    margin-top: 8em;
+}
+
+.list-inline {
+    height: 28px;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 1px;
+}

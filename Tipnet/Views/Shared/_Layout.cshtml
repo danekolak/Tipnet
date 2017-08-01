@@ -1,0 +1,347 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@using System.Web.UI.WebControls
+@using Tipnet.Helper
+@using Tipnet.Models
+
+@functions {
+    private string Timeout = "1000000";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css" + (CultureHelper.IsRightToLeft() ? "-rtl" : ""))
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+
+        //--------------------  Sat --------
+        function GetClock() {
+            var d = new Date();
+            var nhour = d.getHours(), nmin = d.getMinutes(), nsec = d.getSeconds();
+            if (nmin <= 9) nmin = "0" + nmin;
+            if (nsec <= 9) nsec = "0" + nsec;
+
+            document.getElementById('timeTicker').innerHTML = "" + nhour + ":" + nmin + ":" + nsec + "";
+        }
+
+        window.onload = function () {
+            GetClock();
+            setInterval(GetClock, 1000);
+        }
+        //----------------------------------
+        
+        //-----------   Jezici   -----------------
+        function Run() {
+            var e = document.getElementById("Jezik");
+            var strText = e.options[e.selectedIndex].text;
+            console.log(strText);
+
+            var strValue = e.options[e.selectedIndex].value;
+            console.log(strValue);
+
+            $.ajax({
+                url: '/Account/SetCulture',
+                data: { Culture: strValue }
+            }).done(function () {
+                location.reload();
+            });
+        }
+        //----------------------------------
+        
+
+    </script>
+
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="header-1">
+        <div class="container">
+            <div class="col-xs-9">
+                <div id="clockDisplay" class="header-time"><i style="margin-right:5px;" class="glyphicon glyphicon-time"></i><span id="timeTicker"></span></div>
+            </div>
+
+            <select id="Jezik" name="Jezik" class="selectpicker" data-width="fit" data-style="btn btn-xs" onChange="javascript: Run();">
+                <option value="en-us" data-content='<span class="flag-icon flag-icon-us"></span> English'></option>
+                <option value="hr-hr" data-content='<span class="flag-icon flag-icon-hr"></span> Hrvatski'></option>
+            </select>
+          
+        </div>
+    </div>
+    <div class="header-2">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="@Url.Action("Index", "Home")"><img id="logo" src="http://boehm-hilbert.de/wp-content/uploads/2014/12/tipwin-logo-350x250.png" alt="tipwin logo" /></a>
+
+            </div>
+            <div class="logger navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+                @if (Request.RequestContext.HttpContext.Session["login"] != null)
+                {
+                    LogIn sesija = (LogIn) Session["login"];
+
+                    <ul id="partial-login" class="list-inline navbar-right">
+                        <li><strong>@sesija.Username</strong></li>
+                        <li><button class="btn btn-alt" onclick="location.href='@Url.Action("Edit" , "Player")'">@PageResource.PageResource.EditButton</button></li>
+                        <li><button class="btn btn-alt" onclick="location.href = '@Url.Action("LogOff", "Account")'">@PageResource.PageResource.LogOffButton</button></li>
+                    </ul>
+
+                    
+                        ViewBag.totalMinutes = (DateTime.Now - Convert.ToDateTime(Request.Cookies["timestamp"].Value)).TotalMinutes;
+                    
+                }
+                else
+                {
+
+                    @Html.Partial("_LoginPartial")
+                    ViewBag.totalMinutes = 0.00;
+
+                }
+
+
+            </div>
+        </div>
+        <div class="shadow-bg">
+            <div class="container">
+                <div class="row meni">
+                    <div class="col-xs-2"></div>
+                    <div class="col-xs-8">
+                        <ul id="menu">
+                            <li class="dvdr"></li>
+                            <li><a id="homePage" class="menu-selected" href="home" title="Home">@PageResource.PageResource.Home</a></li>
+                            <li class="dvdr"></li>
+                            <li><a id="sportsbook" href="" title="Sports betting">@PageResource.PageResource.SportsBetting</a></li>
+                            <li class="dvdr"></li>
+                            <li><a id="liveLink" href="" title="Live betting">@PageResource.PageResource.LiveBetting</a></li>
+                            <li class="dvdr"></li>
+                            <li><a href="" title="Casino">@PageResource.PageResource.Casino</a></li>
+                            <li class="dvdr"></li>
+                            <li><a href="" title="Live casino">@PageResource.PageResource.LiveCasino</a></li>
+                            <li class="dvdr"></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   
+<div class="container body-content">
+
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Veka</p>
+    </footer>
+</div>
+
+    @* xxXxxxxxxxxXxXxxxxxxxxXx  DIalog box za reality check xxXXxxxxxXxxxxXXXXxxxxXx *@
+<div id="realityCheck" style="display: none;">
+    <p>Proteklo je @ViewBag.totalMinutes.ToString("0.00") minuta od vase prijve.</p>
+    <p>Ukupni broj oklada 17</p>
+    <p>Ulozeni iznos 15.50€</p>
+    <p>Udobitak : 70.00€</p>
+    <label><input type="checkbox" id="agreed" />Pročitao/la sam poruku i želim nastaviti igrati.</label>
+</div>
+    @* xxXxxxxxxxxXxXxxxxxxxxXx ---------------------------xxXXxxxxxXxxxxXXXXxxxxXx *@
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.cookie.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap-select.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        ////////////////////////////////////////////     Automatska odjava    /////////////////////////////////////////
+
+
+    @if(Session["logOffTime"] != null && @Session["logOffTime"].ToString()!="0")
+    { Timeout = Session["logOffTime"].ToString(); }
+
+        var timeout = @Timeout;
+
+        timeout *= 60 * 60 * 1000;
+
+        $(document).ready(function() {
+            toastr.options = {
+                "closeButton": true,
+                "positionClass": "toast-top-center",
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+
+            function AutomatskaOdjava() {
+                window.setTimeout(function() {
+                    toastr["error"]("@ErrorMessages.ErrorMessages.AutoOdjavaBody", "@ErrorMessages.ErrorMessages.AutoOdjavaHead"),
+                        setTimeout("window.location.href = '../account/logoff'",3000);
+                },
+                    timeout);
+            }
+
+            AutomatskaOdjava();
+        });
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        /////////////////////////////////////     Reality check     /////////////////////////////////////////
+        function CheckCookie() {
+            if (typeof $.cookie('login') === 'undefined') {
+                console.log("Pojeo si kolace.");
+            } else {
+                RealityCheck();
+                console.log("Eto kolaca.");
+            }
+        }
+
+        function RealityCheck(){
+            $("#button-ok").button("disable");
+            window.setTimeout("ShowRealityDialog()", 20*60*1000);
+        }
+
+
+        $("#agreed").click(function(){
+            if($(this).is(":checked")){
+                $("#button-ok").button("enable");
+            }else {
+                $("#button-ok").button("disable");
+            }
+
+        });
+
+        function ShowRealityDialog() {
+            $("#realityCheck").dialog({
+                modal: true,
+                resizable: false,
+                draggable: false,
+                width: 'auto',
+                maxWidth: 1600,
+                maxHeight: 500,
+                title: "Reality check",
+                closeOnEscape: false,
+                open: function(event, ui) {
+                    $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+                },
+                buttons: [
+        {
+            id: "button-ok",
+            text: "Ok",
+            click: function() {
+                $(this).dialog("close");
+            }
+        },
+        {
+            id: "button-cancle",
+            text: "@PageResource.PageResource.LogOffButton",
+            click: function() {
+                window.location.href = '../account/logoff';
+            }
+        }
+                ]
+
+            });
+            CheckCookie();
+        };
+        CheckCookie();
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        /////////////////////////////////////     Istek sesije     /////////////////////////////////////////
+
+        var sessionTimeOut = @Session.Timeout * 60 * 1000;
+        var notifikacija;
+        var logOff;
+
+        function SessionExpireAlert(sessionTimeOut) {
+
+            console.log(sessionTimeOut);
+
+            notifikacija = window.setTimeout(function () {
+
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-center",
+                    "preventDuplicates": true,
+                    "onclick": false,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "20000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+
+                toastr["warning"]("@ErrorMessages.ErrorMessages.SessionTimeOutBody", "@ErrorMessages.ErrorMessages.SessionTimeOutHead");
+            }, sessionTimeOut - 20 * 1000);
+
+            logOff = window.setTimeout(function () {
+                alert("@ErrorMessages.ErrorMessages.SessionTimeOutAlert");
+                window.location = "@Url.Action("LogOff", "Account")";
+            }, sessionTimeOut);
+        };
+
+        var body = document.getElementsByTagName("BODY")[0];
+
+        body.addEventListener('keydown',
+            function() {
+                window.clearTimeout(notifikacija);
+                window.clearTimeout(logOff);
+                SessionExpireAlert(sessionTimeOut);
+            });
+        body.addEventListener('click',
+            function() {
+                window.clearTimeout(notifikacija);
+                window.clearTimeout(logOff);
+                SessionExpireAlert(sessionTimeOut);
+            });
+
+        if (typeof $.cookie('login') === 'undefined') {
+            console.log("Pojeo si kolace.");
+        } else {
+            SessionExpireAlert(sessionTimeOut);
+        }
+
+        ////////////////////////////////////////////////////////////
+
+        // ova if petlja po pravilu i ne treba jer ono postavi neki defaultni jezik
+
+        if (typeof $.cookie("language") === "undefined") {
+            //$.cookie("language", "hr-hr");
+            console.log("Pojeo si kolac jezikom");
+        } 
+
+        $(function(){
+            var cookie = $.cookie('language');
+            $('.selectpicker').val(cookie);
+            $('.selectpicker').selectpicker('refresh');
+        });
+
+
+    </script>
+
+</body>
+
+</html>

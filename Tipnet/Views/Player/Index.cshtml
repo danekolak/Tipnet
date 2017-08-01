@@ -1,0 +1,34 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>title</h2>
+<p class="text-danger">@ViewBag.ErrMess</p>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jquery")
+
+    <script>
+
+
+        $(document).ready(function () {
+
+            toastr.options = {
+                "positionClass": "toast-top-center"
+            }
+
+            if ("@ViewBag.Toast" == "error") {
+                toastr.error("@ViewBag.ErrMess");
+            } else if ("@ViewBag.Toast" == "warning") {
+                toastr.warning("@ViewBag.ErrMess");
+            } else if ("@ViewBag.Toast" == "success") {
+                toastr.success("@ViewBag.ErrMess");
+            }
+
+
+        });
+
+    </script>
+}

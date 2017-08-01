@@ -1,0 +1,45 @@
+﻿@using Microsoft.Ajax.Utilities
+
+@{
+    ViewBag.Title = "LoginState";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="login-state-cont">
+    <h2>Login State</h2>
+
+
+    <p class="text-danger"> @ViewBag.ErrMess </p>
+   
+    @if (ViewBag.HasEmail == "true")
+    {
+        @Html.ActionLink("Resend mail", "ResendMail", "Account", new { email = ViewBag.Email }, new { @class = "btn btn-info" })
+    } 
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jquery")
+
+    <script>
+        
+
+        $(document).ready(function () {
+
+            toastr.options = {
+                "positionClass": "toast-top-center"
+            }
+
+            if ("@ViewBag.Toast" == "error") {
+                toastr.error("@ViewBag.ErrMess");
+            } else if ("@ViewBag.Toast" == "warning") {
+                toastr.warning("@ViewBag.ErrMess");
+            } else if ("@ViewBag.Toast" == "success") {
+                toastr.success("@ViewBag.ErrMess");
+            }
+
+
+        });
+     
+    </script>
+}
+

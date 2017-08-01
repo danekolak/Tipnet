@@ -1,0 +1,287 @@
+﻿@using CaptchaMvc.HtmlHelpers
+@model Tipnet.Models.Player
+
+@{
+    ViewBag.Title = "Create";
+}
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.12.4.js"></script>
+
+<h2>Create</h2>
+
+<div class="mcont">
+    <h4 id="heading">Player</h4>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+            <div class="form-group">
+                @Html.LabelFor(model => model.Ime, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Ime, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.Ime, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Prezime, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Prezime, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.Prezime, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            @*-------------------------Passwordi------------------------*@
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.PasswordFor(model => model.Password, new {id = "txtPassword", onkeyup = "CheckPasswordStrength(this.value)", @class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.Password, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <div id="password-strength" class="progress-bar">Strong</div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.PasswordFor(model => model.ConfirmPassword, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            @*--------------------------------------------------------*@
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DatumRodenja, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DatumRodenja, new {htmlAttributes = new {@class = "form-control date-picker"}})
+                    @Html.ValidationMessageFor(model => model.DatumRodenja, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.Email, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Ulica, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Ulica, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.Ulica, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.KucniBroj, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.KucniBroj, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.KucniBroj, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Grad, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Grad, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.Grad, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PostanskiBroj, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PostanskiBroj, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.PostanskiBroj, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Drzava, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.Drzava, (SelectList)ViewBag.Country,  new {@class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.Drzava, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Jezik, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Jezik, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.Jezik, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.BrojTelefona, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.BrojTelefona, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.BrojTelefona, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.BrojMobilnog, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.BrojMobilnog, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.BrojMobilnog, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Oslovljavanje, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Oslovljavanje, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.Oslovljavanje, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Username, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Username, new {htmlAttributes = new {id = "username", @class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.Username, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.HiddenFor(model => model.Id, new {Value = "1", htmlAttributes = new {@class = "form-control"}})
+                </div>
+
+                <div class="col-md-10">
+                    @Html.HiddenFor(model => model.Salt, new {Value = "1", htmlAttributes = new {@class = "form-control"}})
+                </div>
+
+                <div class="col-md-10">
+                    @Html.HiddenFor(model => model.EmailConfirmed, new {Value = false, htmlAttributes = new {@class = "form-control"}})
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    @Html.Captcha(3)
+
+                    <br/>
+                    <p class="text-danger"> @ViewBag.ErrMessage </p>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default"/>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+    @*--------------------------Kalendar--------------------------------------*@
+
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            // This will make every element with the class "date-picker" into a DatePicker element
+            $('.date-picker').datepicker({ dateFormat: 'yy-mm-dd' });
+        })
+    </script>
+
+
+    <script type="text/javascript">
+        function CheckPasswordStrength(password) {
+            var passwordStrength = document.getElementById("password-strength");
+
+            //TextBox left blank.
+            if (password.length === 0) {
+                passwordStrength.innerHTML = "&nbsp;";
+                passwordStrength.style.width = 0;
+                return;
+            }
+
+            //Regular Expressions.
+            var regex = new Array();
+            regex.push("[A-Z]"); //Uppercase Alphabet.
+            regex.push("[a-z]"); //Lowercase Alphabet.
+            regex.push("[0-9]"); //Digit.
+            regex.push("[$@@!%*#?&]"); //Special Character.
+
+            var passed = 0;
+
+            //Validate for each Regular Expression.
+            for (var i = 0; i < regex.length; i++) {
+                if (new RegExp(regex[i]).test(password)) {
+                    passed++;
+                }
+            }
+
+            //Validate for length of Password.
+            if (passed > 3 && password.length > 8) {
+                passed++;
+            }
+
+            //Display status.
+            var color = "";
+            var strength = "";
+            var width = "";
+
+            switch (passed) {
+            case 0:
+            case 1:
+                strength = "Weak";
+                color = "red";
+                width = "5%";
+                break;
+            case 2:
+                strength = "Good";
+                color = "darkorange";
+                width = "15%";
+                break;
+            case 3:
+            case 4:
+                strength = "Strong";
+                color = "green";
+                width = "20%";
+                break;
+            case 5:
+                strength = "Very Strong";
+                color = "darkgreen";
+                width = "30%";
+                break;
+            }
+            passwordStrength.innerHTML = strength;
+            passwordStrength.style.backgroundColor = color;
+            passwordStrength.style.width = width;
+        }
+    </script>
+
+
+
+
+}

@@ -1,0 +1,83 @@
+﻿@using System.Web.UI.WebControls
+@model Tipnet.DTOs.TimeOffDTO
+
+@{
+    ViewBag.Title = "AutomatskaOdjava";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{var listAutoOdjave = new List<ListItem>
+    {
+          new ListItem { Text = "Deaktivirano", Value="0" },
+          new ListItem { Text = "1 Sat", Value="1" },
+          new ListItem { Text = "2 Sata", Value="2" },
+          new ListItem { Text = "3 Sata", Value="3" },
+          new ListItem { Text = "4 Sata", Value="4" },
+          new ListItem { Text = "5 Sati", Value="5" },
+          new ListItem { Text = "6 Sati", Value="6" },
+          new ListItem { Text = "7 Sati", Value="7" },
+          new ListItem { Text = "8 Sati", Value="8" },
+          new ListItem { Text = "9 Sati", Value="9" },
+          new ListItem { Text = "10 Sati", Value="10" },
+          new ListItem { Text = "11 Sati", Value="11" },
+          new ListItem { Text = "12 Sati", Value="12" },
+          new ListItem { Text = "13 Sati", Value="13" },
+          new ListItem { Text = "14 Sati", Value="14" },
+          new ListItem { Text = "15 Sati", Value="15" },
+          new ListItem { Text = "16 Sati", Value="16" },
+          new ListItem { Text = "17 Sati", Value="17" },
+          new ListItem { Text = "18 Sati", Value="18" },
+          new ListItem { Text = "19 Sati", Value="19" },
+          new ListItem { Text = "20 Sati", Value="20" }
+    };
+}
+
+@{var listPauzeKladenja = new List<ListItem>
+    {
+          new ListItem { Text = "1 Sat", Value="1" },
+          new ListItem { Text = "2 Sata", Value="2" },
+          new ListItem { Text = "3 Sata", Value="3" },
+          new ListItem { Text = "4 Sata", Value="4" },
+          new ListItem { Text = "5 Sati", Value="5" },
+          new ListItem { Text = "6 Sati", Value="6" },
+          new ListItem { Text = "10 Sati", Value="10" },
+          new ListItem { Text = "12 Sati", Value="12" },
+          new ListItem { Text = "24 Sati", Value="24" }
+    };
+}
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Automatska odjava</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.AutoOdjava, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.AutoOdjava, new SelectList(listAutoOdjave, "Value", "Text"), new { @class = "form-control"  })
+                @Html.ValidationMessageFor(model => model.AutoOdjava, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.PauzaKladenja, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.PauzaKladenja, new SelectList(listPauzeKladenja, "Value", "Text"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PauzaKladenja, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountAlreadyBlocked" xml:space="preserve">
+    <value>Racun je vec blokiran do</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="AccountBlocked" xml:space="preserve">
+    <value>Racun privremeno blokiran</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="AccountBlockedTill" xml:space="preserve">
+    <value>Racun blokiran do</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="AccountPermaBlocked" xml:space="preserve">
+    <value>Racun trajno blokiran</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="AutoLogOff" xml:space="preserve">
+    <value>Automatski me iskljuci</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="AutoLogOffRequired" xml:space="preserve">
+    <value>Automatsko iskljucenje obavezno</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="AutoOdjavaBody" xml:space="preserve">
+    <value>Vrijeme za automatsku odjavu je isteklo</value>
+    <comment>toastr</comment>
+  </data>
+  <data name="AutoOdjavaHead" xml:space="preserve">
+    <value>Automatska odjava</value>
+    <comment>toastr</comment>
+  </data>
+  <data name="BettingLimitRequired" xml:space="preserve">
+    <value>Pauza klađenja obavezan</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="BettingTimeout" xml:space="preserve">
+    <value>Pauza klađenja</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="Birthdate" xml:space="preserve">
+    <value>Datum rođenja</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="BirthdayRequired" xml:space="preserve">
+    <value>Datum rođenja obavezan</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="CaptchaNotValid" xml:space="preserve">
+    <value>Captcha nije ispravna</value>
+    <comment>captchaError</comment>
+  </data>
+  <data name="ChangeEmailBody" xml:space="preserve">
+    <value>Kliknite na sljedeci link da bi ste potvrdili novu email adresu</value>
+    <comment>mailMessage</comment>
+  </data>
+  <data name="ChangeEmailHead" xml:space="preserve">
+    <value>Link za potvrdu promjene email adrese</value>
+    <comment>emailMessage</comment>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Grad</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="CityRequired" xml:space="preserve">
+    <value>Grad obavezan</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="ConfirmEmailRequired" xml:space="preserve">
+    <value>Potvrdite email obavezno</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Potvrdite zaporuku</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="ConfirmPasswordRequired" xml:space="preserve">
+    <value>Potvrdite zaporuku obavezno</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Država</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="CountryRequired" xml:space="preserve">
+    <value>Država obavezna</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email adresa</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="EmailAndBirthdateError" xml:space="preserve">
+    <value>Email adresa i datum rođenja se ne poklapaju.</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="EmailChanged" xml:space="preserve">
+    <value>Email adresa promjenjena. Nova email adresa je</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="EmailConfirmed" xml:space="preserve">
+    <value>Email adresa uspjesno potvrđena</value>
+    <comment>viewbag</comment>
+  </data>
+  <data name="EmailExists" xml:space="preserve">
+    <value>Email adresa zauzeta</value>
+    <comment>custom error</comment>
+  </data>
+  <data name="EmailMatch" xml:space="preserve">
+    <value>Email adrese se ne podudaraju</value>
+    <comment>custom error</comment>
+  </data>
+  <data name="EmailNotConfirmed" xml:space="preserve">
+    <value>Email nije potvrđen</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="EmailNotExist" xml:space="preserve">
+    <value>Ne postoji korisnik s unesenim email adresom.</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>Email adresa obavezna</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="EmailSent" xml:space="preserve">
+    <value>Email poslan na</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Greška</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="Explanation" xml:space="preserve">
+    <value>Obrazloženje</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="ExplanationRequired" xml:space="preserve">
+    <value>Obrazloženje obavezno</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Ime</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="FirstNameRequired" xml:space="preserve">
+    <value>Ime obavezno</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="HouseNumber" xml:space="preserve">
+    <value>Kucni broj</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Jezik</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="LanguageRequired" xml:space="preserve">
+    <value>Jezik obavezan</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="LevenhsteinError" xml:space="preserve">
+    <value>Password ne smije biti slican imenu, prezimenu ili korisnickom imenu.</value>
+    <comment>ModelError</comment>
+  </data>
+  <data name="LinkNotValid" xml:space="preserve">
+    <value>Link nije valjan</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="LinkValidity" xml:space="preserve">
+    <value>Link je validan 30 minuta.</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="LockDuration" xml:space="preserve">
+    <value>Trajanje blokade</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="LockDurationRequired" xml:space="preserve">
+    <value>Trajanje blokade obavezno</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="LockReason" xml:space="preserve">
+    <value>Razlog blokade</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="LockReasonRequired" xml:space="preserve">
+    <value>Razlog blokade obavezan</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="LoginSuccess" xml:space="preserve">
+    <value>Prijava uspjesna</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="MobilePhoneNumber" xml:space="preserve">
+    <value>Broj mobitela</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Zaporka</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="PasswordChangeSuccess" xml:space="preserve">
+    <value>Password uspjesno promjenjen.</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="PasswordExpression" xml:space="preserve">
+    <value>Zaporka mora sadržavati najmanje 8 znakova od kojih jedno malo slovo, jedno veliko slovo, jedan broj i jedan posebni znak</value>
+    <comment>custom error</comment>
+  </data>
+  <data name="PasswordLength" xml:space="preserve">
+    <value>Zaporka mora sadržavati najmanje 8 i najviše 40 znakova</value>
+    <comment>custom error</comment>
+  </data>
+  <data name="PasswordMatch" xml:space="preserve">
+    <value>Zaporke se ne podudaraju</value>
+    <comment>custom error</comment>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>Zaporka obavezna</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="PasswordResetLinkBody" xml:space="preserve">
+    <value>Kliknite na link da bi ste resetirali password</value>
+    <comment>mailMessage</comment>
+  </data>
+  <data name="PasswordResetLinkHead" xml:space="preserve">
+    <value>Link za reset passworda</value>
+    <comment>mailMessage</comment>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Broj telefona</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="ResetLinkSent" xml:space="preserve">
+    <value>Link za reset je poslan na</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="SamePassError" xml:space="preserve">
+    <value>Novi password ne moze biti isti kao stari password.</value>
+    <comment>ModelError</comment>
+  </data>
+  <data name="SecondName" xml:space="preserve">
+    <value>Prezime</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="SecondNameRequired" xml:space="preserve">
+    <value>Prezime obavezno</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="ServerError" xml:space="preserve">
+    <value>Greška servera!</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="SessionTimeOutAlert" xml:space="preserve">
+    <value>Sessija istekla!</value>
+    <comment>alert</comment>
+  </data>
+  <data name="SessionTimeOutBody" xml:space="preserve">
+    <value>Vaša sesija istice za 20 sekundi!</value>
+    <comment>toastr</comment>
+  </data>
+  <data name="SessionTimeOutHead" xml:space="preserve">
+    <value>Sessija istice</value>
+    <comment>toastr</comment>
+  </data>
+  <data name="StreetName" xml:space="preserve">
+    <value>Ulica</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="StreetRequired" xml:space="preserve">
+    <value>Ulica obavezno</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Oslovljavanje</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="TitleRequired" xml:space="preserve">
+    <value>Oslovljavanje obavezno</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Korisnicko ime</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="UsernameAndBirthdateError" xml:space="preserve">
+    <value>Korisnicko ime i datum rodjenja se ne poklapaju.</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="UsernameExists" xml:space="preserve">
+    <value>Korisnicko ime zauzeto</value>
+    <comment>custom error</comment>
+  </data>
+  <data name="UsernameExpression" xml:space="preserve">
+    <value>Mora biti između 6 i 20 alfanumeričkih znakova uključujući - i _</value>
+    <comment>custom error</comment>
+  </data>
+  <data name="UsernameMail" xml:space="preserve">
+    <value>Vaše korisnicko ime je:</value>
+    <comment>mailMessage</comment>
+  </data>
+  <data name="UsernameMailSent" xml:space="preserve">
+    <value>Korisnicko ime je poslano na</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="UsernameNotExist" xml:space="preserve">
+    <value>Korisnicko ime ne postoji.</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="UsernameRequired" xml:space="preserve">
+    <value>Korisnicko ime obavezno</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>Netocna zaporka</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="WrongUsername" xml:space="preserve">
+    <value>Netocno korisnicko ime</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="ZipCode" xml:space="preserve">
+    <value>Poštanski broj</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="ZipRequired" xml:space="preserve">
+    <value>Poštanski broj obavezan</value>
+    <comment>required attribut</comment>
+  </data>
+</root>

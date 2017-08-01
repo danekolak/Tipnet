@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountAlreadyBlocked" xml:space="preserve">
+    <value>Account already blocked till</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="AccountBlocked" xml:space="preserve">
+    <value>Account temporarily blocked</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="AccountBlockedTill" xml:space="preserve">
+    <value>Account blocked till</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="AccountPermaBlocked" xml:space="preserve">
+    <value>Account permanently blocked</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="AutoLogOff" xml:space="preserve">
+    <value>Log me out automatically after</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="AutoLogOffRequired" xml:space="preserve">
+    <value>Automatic log off required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="AutoOdjavaBody" xml:space="preserve">
+    <value>Your timeout period has expired</value>
+    <comment>toastr</comment>
+  </data>
+  <data name="AutoOdjavaHead" xml:space="preserve">
+    <value>Automatic timeout</value>
+    <comment>toastr</comment>
+  </data>
+  <data name="BettingLimitRequired" xml:space="preserve">
+    <value>Betting limit required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="BettingTimeout" xml:space="preserve">
+    <value>Betting timeout</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="Birthdate" xml:space="preserve">
+    <value>Date of birth</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="BirthdayRequired" xml:space="preserve">
+    <value>Birthday required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="CaptchaNotValid" xml:space="preserve">
+    <value>Captcha is not valid</value>
+    <comment>captchaError</comment>
+  </data>
+  <data name="ChangeEmailBody" xml:space="preserve">
+    <value>Click on the following link to confirm your new email address </value>
+    <comment>mailMessage</comment>
+  </data>
+  <data name="ChangeEmailHead" xml:space="preserve">
+    <value>Email change confirmation link</value>
+    <comment>mailMessage</comment>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="CityRequired" xml:space="preserve">
+    <value>City required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="ConfirmEmailRequired" xml:space="preserve">
+    <value>Confirm email required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm password</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="ConfirmPasswordRequired" xml:space="preserve">
+    <value>Confirm password required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Country</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="CountryRequired" xml:space="preserve">
+    <value>Country required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="EmailAndBirthdateError" xml:space="preserve">
+    <value>Email address and birthdate do not match.</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="EmailChanged" xml:space="preserve">
+    <value>Email address changes. New email address is </value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="EmailConfirmed" xml:space="preserve">
+    <value>Email address successfully confirmed</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="EmailExists" xml:space="preserve">
+    <value>Email already taken</value>
+    <comment>custom error</comment>
+  </data>
+  <data name="EmailMatch" xml:space="preserve">
+    <value>Email do not match</value>
+    <comment>custom error</comment>
+  </data>
+  <data name="EmailNotConfirmed" xml:space="preserve">
+    <value>Email is not confirmed</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="EmailNotExist" xml:space="preserve">
+    <value>There is no user with entered email address.</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>Email required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="EmailSent" xml:space="preserve">
+    <value>Email sent to </value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="Explanation" xml:space="preserve">
+    <value>Explanation</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="ExplanationRequired" xml:space="preserve">
+    <value>Explanation required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First name</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="FirstNameRequired" xml:space="preserve">
+    <value>First name required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="HouseNumber" xml:space="preserve">
+    <value>House number</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="LanguageRequired" xml:space="preserve">
+    <value>Language required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="LevenhsteinError" xml:space="preserve">
+    <value>Password must not be similar to first name, second name or username.</value>
+    <comment>ModelError</comment>
+  </data>
+  <data name="LinkNotValid" xml:space="preserve">
+    <value>Link not valid</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="LinkValidity" xml:space="preserve">
+    <value>Link is valid for 30 minutes.</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="LockDuration" xml:space="preserve">
+    <value>Lock duration</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="LockDurationRequired" xml:space="preserve">
+    <value>Lock duration required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="LockReason" xml:space="preserve">
+    <value>Lock reason</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="LockReasonRequired" xml:space="preserve">
+    <value>Lock reason required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="LoginSuccess" xml:space="preserve">
+    <value>Login successfull</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="MobilePhoneNumber" xml:space="preserve">
+    <value>Mobile phone number</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="PasswordChangeSuccess" xml:space="preserve">
+    <value>Password successfuly changed</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="PasswordExpression" xml:space="preserve">
+    <value>Password must contain at least 8 characters of which one is lowercase one uppercase one number and one special symbol</value>
+    <comment>custom error</comment>
+  </data>
+  <data name="PasswordLength" xml:space="preserve">
+    <value>Password must consist of at least 8 and at moast 40 characters</value>
+    <comment>custom error</comment>
+  </data>
+  <data name="PasswordMatch" xml:space="preserve">
+    <value>Password do not match</value>
+    <comment>custom error</comment>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>Password required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="PasswordResetLinkBody" xml:space="preserve">
+    <value>Click on the link to reset your password</value>
+    <comment>mailMessage</comment>
+  </data>
+  <data name="PasswordResetLinkHead" xml:space="preserve">
+    <value>Password reset link</value>
+    <comment>mailMessage</comment>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Phone number</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="ResetLinkSent" xml:space="preserve">
+    <value>Reset link is sent to </value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="SamePassError" xml:space="preserve">
+    <value>New password can't be same as your old password.</value>
+    <comment>ModelError</comment>
+  </data>
+  <data name="SecondName" xml:space="preserve">
+    <value>Second name</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="SecondNameRequired" xml:space="preserve">
+    <value>Second name required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="ServerError" xml:space="preserve">
+    <value>Server error!</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="SessionTimeOutAlert" xml:space="preserve">
+    <value>Session expired!</value>
+    <comment>alert</comment>
+  </data>
+  <data name="SessionTimeOutBody" xml:space="preserve">
+    <value>Your session expires in 20 seconds!</value>
+    <comment>toastr</comment>
+  </data>
+  <data name="SessionTimeOutHead" xml:space="preserve">
+    <value>Session is expireing</value>
+    <comment>toastr</comment>
+  </data>
+  <data name="StreetName" xml:space="preserve">
+    <value>Street name</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="StreetRequired" xml:space="preserve">
+    <value>Street name required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="TitleRequired" xml:space="preserve">
+    <value>Title required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="UsernameAndBirthddateError" xml:space="preserve">
+    <value>Username and birthdate do not match.</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="UsernameExists" xml:space="preserve">
+    <value>Username already taken</value>
+    <comment>custom error</comment>
+  </data>
+  <data name="UsernameExpression" xml:space="preserve">
+    <value>Must be between 6 and 20 alfanumeric characters including - and _</value>
+    <comment>custom error</comment>
+  </data>
+  <data name="UsernameMail" xml:space="preserve">
+    <value>Your username is:</value>
+    <comment>mailMessage</comment>
+  </data>
+  <data name="UsernameMailSent" xml:space="preserve">
+    <value>Username sent to </value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="UsernameNotExist" xml:space="preserve">
+    <value>There is no user with entered username.</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="UsernameRequired" xml:space="preserve">
+    <value>Username required</value>
+    <comment>required attribut</comment>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>Wrong password</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="WrongUsername" xml:space="preserve">
+    <value>Wrong username</value>
+    <comment>viewBag</comment>
+  </data>
+  <data name="ZipCode" xml:space="preserve">
+    <value>ZIP code</value>
+    <comment>display attribut</comment>
+  </data>
+  <data name="ZipRequired" xml:space="preserve">
+    <value>ZIP code required</value>
+    <comment>required attribut</comment>
+  </data>
+</root>

@@ -1,0 +1,36 @@
+﻿@model Tipnet.DTOs.LoginFormDTO
+
+    <ul id="vanjska-lista">
+        <li>
+            <ul id="partial-login" class="list-inline navbar-right">
+                <li>
+                    <form action="@Url.Action("LogIn", "Account",new {ReturnUrl = Request.QueryString["ReturnUrl"] })" method="post" class="form-inline">
+                        @Html.AntiForgeryToken()
+
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { type = "text", placeholder = "Username", @class = "loginInput" } })
+
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { type = "password", placeholder = "Password", @class = "loginInput" } })
+
+                        <button type="submit" class="btn-a">@PageResource.PageResource.LogInButton</button>
+                    </form>
+                </li>
+                <li class="btn-alt">
+                    @Html.ActionLink("Register", "Create", "Player", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "" })
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div id="recovery">
+                <ul class="list-inline">
+                    <li>
+                        @Html.ActionLink(@PageResource.PageResource.ForgottenUsername, "ZaboravljenUsername", "Account")
+                    </li>
+                    <li>
+                        @Html.ActionLink(@PageResource.PageResource.ForgottenPassword, "ZaboravljenPass", "Account")
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+
+

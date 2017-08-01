@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tipnet", "Tipnet\Tipnet.csproj", "{2B6A987F-BE9D-4F9A-A636-890BF29A731E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorMessages", "ErrorMessages\ErrorMessages.csproj", "{C2D4D133-2918-46F3-9C7F-AE6C610234F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageResource", "PageResource\PageResource.csproj", "{98C0C34A-BCD1-47B2-B94F-E63823614017}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B6A987F-BE9D-4F9A-A636-890BF29A731E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B6A987F-BE9D-4F9A-A636-890BF29A731E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B6A987F-BE9D-4F9A-A636-890BF29A731E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B6A987F-BE9D-4F9A-A636-890BF29A731E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2D4D133-2918-46F3-9C7F-AE6C610234F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2D4D133-2918-46F3-9C7F-AE6C610234F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2D4D133-2918-46F3-9C7F-AE6C610234F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2D4D133-2918-46F3-9C7F-AE6C610234F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98C0C34A-BCD1-47B2-B94F-E63823614017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98C0C34A-BCD1-47B2-B94F-E63823614017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98C0C34A-BCD1-47B2-B94F-E63823614017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98C0C34A-BCD1-47B2-B94F-E63823614017}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,72 @@
+﻿@using System.Web.UI.WebControls
+@model Tipnet.DTOs.BlokadaRacunaDTO
+
+@{
+    ViewBag.Title = "BlokadaRacuna";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{var listTrajanje = new List<ListItem>
+    {
+          new ListItem { Text = "7 dana", Value="7" },
+          new ListItem { Text = "14 dana", Value="14" },
+          new ListItem { Text = "30 dana", Value="30" },
+          new ListItem { Text = "Trajno", Value="Trajno" }
+    };
+}
+
+@{var listRazloga = new List<ListItem>
+    {
+          new ListItem { Text = "Sportsko klađenje me više ne zanima", Value="interes" },
+          new ListItem { Text = "Nisam zadovoljan(a) uslugama kladionice", Value="zadovoljstvo" },
+          new ListItem { Text = "Prevencija ovisnosti o sportskom klađenju", Value="ovisnost" },
+          new ListItem { Text = "Drugi razlozi", Value="drugo" }
+    };
+}
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Blokada Racuna</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.TrajanjeBlokade, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.TrajanjeBlokade, new SelectList(listTrajanje, "Value", "Text"),  new { @class = "form-control"  })
+                @Html.ValidationMessageFor(model => model.TrajanjeBlokade, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RazlogBlokade, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.RazlogBlokade, new SelectList(listRazloga, "Value", "Text"), new { @class = "form-control"  })
+                @Html.ValidationMessageFor(model => model.RazlogBlokade, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Obrazlozenje, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Obrazlozenje, new { @class = "form-control"  })
+                @Html.ValidationMessageFor(model => model.Obrazlozenje, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
